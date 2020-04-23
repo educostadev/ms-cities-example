@@ -1,2 +1,2 @@
 # ms-cities-example
-A Microservice Example using Spring Boot and other technologies
+A group of Microservice Example using Spring Boot and other technologies

@@ -1,0 +1,24 @@
+server:
+  port: 8087
+
+logging:
+  level:
+    ROOT: ${LOG_LEVEL:debug}
+    org.hibernate.tool.hbm2ddl: ${LOG_LEVEL:debug}
+    org.hibernate.SQL: ${LOG_LEVEL:debug}
+    org.hibernate.type.descriptor.sql: ${LOG_LEVEL:debug}
+
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 2
+      connection-timeout: 20000
+    initialization-mode: never
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update # Values: none, create, create-drop, validate, update
