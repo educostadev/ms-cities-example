@@ -1,4 +1,4 @@
-package com.application.cities.jpa;
+package com.application;
 
 import com.application.cities.domain.factories.CityFactory;
 import com.application.cities.jpa.repository.CityRepository;

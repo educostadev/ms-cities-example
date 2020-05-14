@@ -1,0 +1,9 @@
+server:
+  port: 8088
+
+logging:
+  level:
+    ROOT: ${LOG_LEVEL:debug}
+    org.hibernate.tool.hbm2ddl: ${LOG_LEVEL:debug}
+    org.hibernate.SQL: ${LOG_LEVEL:debug}
+    org.hibernate.type.descriptor.sql: ${LOG_LEVEL:debug}

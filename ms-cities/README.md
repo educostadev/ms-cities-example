@@ -15,12 +15,14 @@ For create the database use the Dockerfile.postgres.
 
 ## Technologies
 
-- Spring boot
+- JDK 11
+- Spring boot 2.2.6.RELEASE
 - Lombok
 - TestContainer
 - Junit5
 - Swagger2
 - JPA
+- CSV File Reading with Apache commons-csv and Apache commons-io
 
 
 

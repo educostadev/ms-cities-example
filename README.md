@@ -1,4 +1,4 @@
-# Creating the database
+# How to create the database
 
 This project uses the postgresSQL database. For create the database you can use file `Dockerfile.postgres`. 
 
