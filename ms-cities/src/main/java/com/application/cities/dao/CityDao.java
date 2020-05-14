@@ -6,6 +6,7 @@ import com.application.cities.domain.City;
 import com.application.cities.domain.factories.CityFactory;
 import com.application.cities.jpa.repository.CityRepository;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -34,5 +35,9 @@ public class CityDao {
     return cityRepository.findByCountryAbbreviation(countryAbbreviation)
         .stream().map(CityFactory::from)
         .collect(Collectors.toList());
+  }
+
+  public Optional<City> readCityById(long id) {
+    return cityRepository.findById(id).map(CityFactory::from);
   }
 }

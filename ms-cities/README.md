@@ -1,29 +1,28 @@
-# Template for Microservice #
+# API For Retrieve Cities
+
+## Database connection
+
+For create the database use the Dockerfile.postgres.
+
+- DB_URL=jdbc:postgresql://localhost:5100/mscitiesdb?currentSchema=mscities
+- DB_USERNAME=dbuser
+- DB_PASSWORD=dbpass
+
+## End points
+
+`GET` http://localhost:8087/v1/cities?country=BR 
+`GET` http://localhost:8087/v1/city/1076532519
+
+## Technologies
 
 - Spring boot
 - Lombok
 - TestContainer
 - Junit5
 - Swagger2
+- JPA
 
 
-# Local postgres configuration
-
-Create the postgres image from `Dockerfile.postgres`. See the file for database user and password.
-
-``
-docker build -t cities/postgres -f Dockerfile.postgres .
-``
-
-Create and run the container from the image
-``
-docker run -d -p 5100:5432 --name cities-postgres cities/postgres
-``
-
-Start the container 
-``
-docker start cities-postgres
-``
 
 
 

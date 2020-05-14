@@ -1,3 +1,3 @@
-
+CREATE SCHEMA mscities;
 
 commit;
