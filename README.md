@@ -1,6 +1,15 @@
-# How to create the database
+# Microservice Application
 
-This project uses the postgresSQL database. For create the database you can use file `Dockerfile.postgres`. 
+This project groups a set of applications to play with microservice architecture. 
+
+The application context is relate to cities of the world with data set from [simplemaps.com](https://simplemaps.com/data/world-cities)
+
+Some os the projects uses the postgresSQL database others just load the data in memory to keep the simplicity of the code. 
+
+## How to create the database
+
+
+To create the database you can use file `Dockerfile.postgres`. 
 
 First run the following command, and the docker will download the postgres image.
 

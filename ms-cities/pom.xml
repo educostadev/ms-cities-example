@@ -9,7 +9,7 @@
     <version>2.2.6.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
-  <groupId>com.application</groupId>
+  <groupId>dev.educosta</groupId>
   <artifactId>api-ms-cities</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>api-ms-cities</name>

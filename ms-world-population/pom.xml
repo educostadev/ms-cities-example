@@ -9,13 +9,13 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>dev.educosta</groupId>
-	<artifactId>api-ms-geolocation</artifactId>
+	<artifactId>api-ms-world-population</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>api-geolocation</name>
-	<description>Microservice to read latitude and longitude from Cities</description>
+	<name>ms-world-population</name>
+	<description>Microservice application to inform the population from a city</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>14</java.version>
 	</properties>
 
 	<dependencies>
@@ -26,6 +26,10 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 			<exclusions>
@@ -34,13 +38,6 @@
 					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-
-		<!-- Development Hot Deploy -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>provided</scope>
 		</dependency>
 
 		<!-- CSV Reading -->
@@ -54,6 +51,7 @@
 			<artifactId>commons-csv</artifactId>
 			<version>1.8</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>
