@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import com.application.cities.jpa.entities.CityEntity;
 import com.application.cities.domain.City;
-import com.application.cities.jpa.repository.CityRepository;
+import com.application.cities.jpa.repositories.CityRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

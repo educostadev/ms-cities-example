@@ -1,15 +1,17 @@
-package com.application;
+package com.application.population;
 
-import com.application.cities.domain.factories.CityFactory;
-import com.application.cities.jpa.repositories.CityRepository;
+import com.application.population.domain.PopulationRepository;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.charset.StandardCharsets;
+import java.util.stream.StreamSupport;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.io.input.BOMInputStream;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -18,17 +20,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataLoader implements ApplicationRunner {
 
-  private final CityRepository repository;
+  private static final Logger logger = LoggerFactory.getLogger(DataLoader.class);
+
+  private final PopulationRepository repository;
 
   @Autowired
-  public DataLoader(CityRepository repository) {
+  public DataLoader(PopulationRepository repository) {
     this.repository = repository;
   }
 
   public void run(ApplicationArguments args) throws IOException {
-    if (repository.isEmpty()) {
-      loadFromCSV();
-    }
+    logger.debug("Reading csf file to populate repository in memory...");
+    loadFromCSV();
+    logger.debug("Reading finished.");
   }
 
   private void loadFromCSV() throws IOException {
@@ -37,7 +41,13 @@ public class DataLoader implements ApplicationRunner {
         new BOMInputStream(resourceAsStream), StandardCharsets.UTF_8);
     try (resourceAsStream; reader; CSVParser parser = new CSVParser(reader,
         CSVFormat.EXCEL.withHeader())) {
-      parser.forEach(record -> repository.save(CityFactory.from(record)));
+      StreamSupport.stream(parser.spliterator(), false)
+          .filter(record -> !record.get("population").isEmpty())
+          .forEach(record -> repository.add(
+              Long.parseLong(record.get("id")),
+              (long) Double.parseDouble(record.get("population"))
+              )
+          );
     }
   }
 

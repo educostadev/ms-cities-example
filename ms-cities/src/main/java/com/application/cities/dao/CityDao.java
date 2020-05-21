@@ -4,7 +4,7 @@ import com.application.cities.exceptions.NotFoundException;
 import com.application.cities.jpa.entities.CityEntity;
 import com.application.cities.domain.City;
 import com.application.cities.domain.factories.CityFactory;
-import com.application.cities.jpa.repository.CityRepository;
+import com.application.cities.jpa.repositories.CityRepository;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

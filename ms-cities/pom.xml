@@ -9,7 +9,7 @@
     <version>2.2.6.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
-  <groupId>dev.educosta</groupId>
+  <groupId>com.application</groupId>
   <artifactId>api-ms-cities</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>api-ms-cities</name>
@@ -94,6 +94,7 @@
       <version>42.2.8</version>
       <scope>runtime</scope>
     </dependency>
+    <!-- CSV Reading-->
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>

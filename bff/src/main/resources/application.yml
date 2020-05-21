@@ -1,0 +1,9 @@
+backingServices:
+  citiesUrl: http://localhost:8087
+
+server:
+  port: 8080
+
+logging:
+  level:
+    ROOT: ${LOG_LEVEL:debug}

@@ -1,7 +1,7 @@
 package com.application;
 
 import com.application.geo.domain.GeoLocationFactory;
-import com.application.geo.service.GeoLocationRepository;
+import com.application.geo.services.GeoLocationRepository;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;

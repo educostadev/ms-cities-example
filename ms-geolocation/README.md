@@ -11,8 +11,8 @@ Its load a CSV File in memory with information cities of the word data and provi
 
 ## Technologies used
 
-- Spring boot 2.3.0.RC1
 - JDK 11
+- Spring boot 2.3.0.RC1
 - CSV File Reading with Apache commons-csv and Apache commons-io
 
 
