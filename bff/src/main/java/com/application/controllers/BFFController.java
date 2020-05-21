@@ -1,5 +1,7 @@
 package com.application.controllers;
 
+import static java.util.Optional.ofNullable;
+
 import com.application.domain.City;
 import com.application.services.CitiesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +22,7 @@ public class BFFController {
       @PathVariable long cityId,
       @RequestHeader(required = false) Long delay
   ) {
-    return ResponseEntity.ok(citiesService.readCity(cityId,delay));
+    return ResponseEntity.ok(citiesService.readCity(cityId, ofNullable(delay).orElse(0L)));
   }
 
 }
